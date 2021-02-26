@@ -84,5 +84,49 @@ safetailB xs | null xs = []
 safetailC :: [a] -> [a]
 safetailC [] = []
 safetailC xs = tail xs
+-- alt safetailC (_:xs) = xs
 
+-- Q4
+(||) :: Bool -> Bool -> Bool
+True || True = True
+True || False = True
+False || True = True
+False || False = False 
 
+(||*) :: Bool -> Bool -> Bool
+True ||* _ = True
+False ||* b = b
+
+(||**) :: Bool -> Bool -> Bool
+False ||** False = False
+_ ||** _ = True
+
+-- Q5
+
+(&&@) :: Bool -> Bool -> Bool
+a &&@ b = if a == True then
+    if b == True then
+        True
+        else False
+    else False
+
+-- Q6
+(&&@@) :: Bool -> Bool -> Bool
+a &&@@ b = if a == True then b else False
+
+-- Q7
+mult :: Int -> Int -> Int -> Int
+mult x y z = x*y*z
+-- mult = \x -> (\y -> (\z -> x * y * z))
+
+-- collapsed lambda
+mult1 :: Int -> (Int -> (Int -> Int))
+mult1 = \ x y z -> x * y * z
+
+-- Q8
+
+(*2)
+
+luhnDouble :: Int -> Int
+luhnDouble x | x*2 < 9 = x*2
+             | otherwise = x*2 - 9
