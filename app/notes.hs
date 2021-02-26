@@ -1,5 +1,7 @@
 {- Notes -}
 
+-- [1..n] -- a list [1, 2, 3, ... n]
+
 -- head [] = first element
 -- tail [] = everything but first element
 -- [list] !! n = nth thing (first is position 0)

@@ -1,3 +1,4 @@
+module Cha3 where
 {- Chapter 3 -}
 
 --types e :: t means expression has type t
@@ -13,7 +14,7 @@
 
 --useful functions from partially applying a curried function
 
-take -- is a curried function
+-- take is a curried function
 -- so take 5 will return a function that takes the first 5 things off a list
 
 -- arrows accosiate to the right ->
@@ -44,19 +45,23 @@ take -- is a curried function
 -- show vs read
 
 {- Chapter 3 - Excercises -}
+charList = ['a', 'b', 'c']
+charList :: [Char]
 
-['a', 'b', 'c'] :: [Char]
+charTuple = ('a', 'b', 'c')
+charTuple :: (Char,Char,Char)
 
-('a', 'b', 'c') :: (Char,Char,Char)
+thing = [(False, '0'), (True, '1')]
+thing :: [(Bool, Char)] 
 
-[(False, '0'), (True, '1')] :: [(Bool, Char)] 
+thing1 = ([True, False], ['0','1'])
+thing1 :: ([Bool], [Char])
 
-([True, False], ['0','1']) :: ([Bool], [Char])
-
-[tail, init, reverse] :: [[a] -> [a]]
+funcList = [tail, init, reverse]
+funcList :: [[a] -> [a]]
 
 --
-:
+
 bools = [False, True, False, True]
 
 nums = [[3, 4], [1, 2, 3, 4::Int]]

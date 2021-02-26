@@ -1,3 +1,4 @@
+module Cha2 where
 {- Chapter 2 -}
 
 -- layout rule
