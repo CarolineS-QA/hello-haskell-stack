@@ -1,7 +1,9 @@
 module Main where
 
 import Lib
-import TestA
+import TestA ()
+import FizzBuzz ()
+
 --import programming-in-haskell. Cha1
 
 main :: IO ()

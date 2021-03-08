@@ -125,7 +125,7 @@ mult1 = \ x y z -> x * y * z
 
 -- Q8
 
-(*2)
+-- (*2)
 
 luhnDouble :: Int -> Int
 luhnDouble x | x*2 < 9 = x*2

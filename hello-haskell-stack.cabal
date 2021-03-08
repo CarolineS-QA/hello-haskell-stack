@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c6753a5d258d8f26ad948038b17336f4831ed070586bbb597a1480f9419edde2
+-- hash: a5a25129947dd953548e0cf577edc6532a7f4423c9e26bd1ee437d04300d851b
 
 name:           hello-haskell-stack
 version:        0.1.0.0
@@ -39,6 +39,7 @@ library
 executable hello-haskell-stack-exe
   main-is: Main.hs
   other-modules:
+      FizzBuzz
       TestA
       Paths_hello_haskell_stack
   hs-source-dirs:
