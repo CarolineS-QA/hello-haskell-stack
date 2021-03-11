@@ -2,7 +2,7 @@ module Cha5 where
 
 import Data.Char
 
-{- DList comprehensions -}
+{- List comprehensions -}
 
 -- in repl
 --[x^2 | x <- [1..5]]
