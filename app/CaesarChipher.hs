@@ -1,4 +1,4 @@
-module Chipher where
+module CaesarChipher where
 import Data.Char
 
 
