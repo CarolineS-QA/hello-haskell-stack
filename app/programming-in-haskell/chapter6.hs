@@ -96,26 +96,28 @@ euclid x y | x == y = x
 -- sies A
 andR :: [Bool] -> Bool
 andR [] = True
-andR (x:xs) | x = andR xs
+andR (b:bs) | b = andR bs
             | otherwise = False
+
+-- andR (b:bs) = b && andR bs
 
 -- sies B
 concatR :: [[a]] -> [a]
 concatR [] = []
-concatR (x:xs) = x ++ concatR xs
+concatR (xs:xss) = xs ++ concatR xss
 
--- concatR xs = foldr (++) [] xs
+-- wants to be:
+--concatR xs = foldr (++) [] xs
 
 -- sies C
 replicateR :: Int -> a -> [a]
-replicateR 0 x = []
-replicateR 1 x = [x]
+replicateR 0 _ = []
 replicateR n x = x : replicateR (n-1) x
 
 -- sies D
 (!!*) :: [a] -> Int -> a
--- [] !!* _ =
-(x:_) !!* 1 = x
+-- [] !!* _ = error?
+(x:_) !!* 0 = x
 (_:xs) !!* n = xs !!* (n-1)
 
 -- sies E
@@ -128,3 +130,31 @@ elemR a (x:xs) | a == x = True
 
 mergeR :: Ord a => [a] -> [a] -> [a]
 mergeR [] [] = []
+mergeR (x:xs) (y:ys) | x > y = y : mergeR (x:xs) ys
+                     | y > x = x : mergeR xs (y:ys)
+
+-- octo
+
+--TODO
+--msort :: Ord a => [a] -> [a]
+
+--halve :: [a] -> ([a],[a])
+
+
+-- nein A
+
+sumR :: Num p => [p] -> p
+sumR [] = 0
+sumR (x:xs) = x + sumR xs
+
+--sumR xs = foldr (+) 0 xs
+
+-- nein B
+takeR :: Int -> [a] -> [a]
+takeR 0 (x:xs) = x:xs
+takeR n (x:xs) = x : takeR (n-1) xs
+
+-- nein C
+lastR :: [a] -> a
+lastR [x] = x
+lastR (_:xs) = lastR xs
