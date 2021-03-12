@@ -1,4 +1,4 @@
-module Cha5 where
+module Chapter5 where
 
 import Data.Char
 

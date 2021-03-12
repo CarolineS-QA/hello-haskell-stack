@@ -5,7 +5,7 @@ import TestA ()
 import FizzBuzz ()
 import CaesarChipher ()
 
---import programming-in-haskell. Cha1
+--import programming-in-haskell.Chapter1
 
 main :: IO ()
 main = someFunc

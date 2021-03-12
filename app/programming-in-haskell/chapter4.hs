@@ -1,4 +1,4 @@
-module Cha4 where
+module Chapter4 where
 {- Defining Functions -}
 
 -- Conditional experessions

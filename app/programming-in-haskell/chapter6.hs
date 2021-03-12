@@ -1,4 +1,4 @@
-module Cha6 where
+module Chapter6 where
 
 {- Recursive functions -}
 
@@ -88,7 +88,7 @@ euclid :: Int -> Int -> Int
 euclid 1 1 = 1
 euclid x y | x == y = x
            | x > y = euclid y (x - y)
-           | y > x = euclid x (y - x)
+           | otherwise = euclid x (y - x)
 
 -- cinco
 --eww.
@@ -130,15 +130,21 @@ elemR a (x:xs) | a == x = True
 
 mergeR :: Ord a => [a] -> [a] -> [a]
 mergeR [] [] = []
+mergeR xs [] = xs
+mergeR [] xs = xs
 mergeR (x:xs) (y:ys) | x > y = y : mergeR (x:xs) ys
                      | y > x = x : mergeR xs (y:ys)
 
 -- octo
+halve :: [a] -> ([a], [a])
+halve xs = splitAt (length xs `div` 2) xs
+--hint? use halve :: [a] -> ([a],[a])
 
---TODO
---msort :: Ord a => [a] -> [a]
-
---halve :: [a] -> ([a],[a])
+msort :: Ord a => [a] -> [a]
+msort [] = []
+msort [x] = [x]
+msort xs = mergeR (msort ys) (msort zs)
+           where (ys, zs) = halve xs
 
 
 -- nein A
