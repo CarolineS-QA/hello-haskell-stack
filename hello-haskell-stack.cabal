@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d0b420ef5a01fac5e94ed51a85a12318107e13c5ff8071e2501d3bad3bc9205f
+-- hash: 170da1bc6ea829e95c97b5a1856d120dd565318734b7cd046bf98ad07a655577
 
 name:           hello-haskell-stack
 version:        0.1.0.0
@@ -29,7 +29,7 @@ library
   exposed-modules:
       Lib
   other-modules:
-      Paths_hello_haskell_stack
+      --Paths_hello_haskell_stack
   hs-source-dirs:
       src
   build-depends:
@@ -39,10 +39,17 @@ library
 executable hello-haskell-stack-exe
   main-is: Main.hs
   other-modules:
-      CaesarChipher
-      FizzBuzz
-      TestA
-      Paths_hello_haskell_stack
+      --CaesarChipher
+      --FizzBuzz
+      --ProgrammingInHaskell.Chapter1
+      --ProgrammingInHaskell.Chapter2
+      --ProgrammingInHaskell.Chapter3
+      --ProgrammingInHaskell.Chapter4
+      --ProgrammingInHaskell.Chapter5
+      --ProgrammingInHaskell.Chapter6
+      ProgrammingInHaskell.Chapter7
+      --TestA
+      --Paths_hello_haskell_stack
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
