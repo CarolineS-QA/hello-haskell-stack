@@ -1,4 +1,4 @@
-module Chapter1 where
+module ProgrammingInHaskell.Chapter1 where
 -- Chapter 1
 
 -- quad = double (double 2)

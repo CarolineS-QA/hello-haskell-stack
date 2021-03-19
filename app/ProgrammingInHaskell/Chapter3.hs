@@ -1,4 +1,4 @@
-module Chapter3 where
+module ProgrammingInHaskell.Chapter3 where
 {- Chapter 3 -}
 
 --types e :: t means expression has type t

@@ -1,4 +1,4 @@
-module Chapter6 where
+module ProgrammingInHaskell.Chapter6 where
 
 {- Recursive functions -}
 

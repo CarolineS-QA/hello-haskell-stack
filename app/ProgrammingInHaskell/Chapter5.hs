@@ -1,4 +1,4 @@
-module Chapter5 where
+module ProgrammingInHaskell.Chapter5 where
 
 import Data.Char
 

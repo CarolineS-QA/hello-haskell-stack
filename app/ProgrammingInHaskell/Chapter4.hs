@@ -1,4 +1,4 @@
-module Chapter4 where
+module ProgrammingInHaskell.Chapter4 where
 {- Defining Functions -}
 
 -- Conditional experessions

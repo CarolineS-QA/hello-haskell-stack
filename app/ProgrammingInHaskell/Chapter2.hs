@@ -1,4 +1,4 @@
-module Chapter2 where
+module ProgrammingInHaskell.Chapter2 where
 {- Chapter 2 -}
 
 -- layout rule
