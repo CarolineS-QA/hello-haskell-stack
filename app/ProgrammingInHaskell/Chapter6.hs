@@ -133,7 +133,7 @@ mergeR [] [] = []
 mergeR xs [] = xs
 mergeR [] xs = xs
 mergeR (x:xs) (y:ys) | x > y = y : mergeR (x:xs) ys
-                     | y > x = x : mergeR xs (y:ys)
+                     | otherwise = x : mergeR xs (y:ys)
 
 -- octo
 halve :: [a] -> ([a], [a])

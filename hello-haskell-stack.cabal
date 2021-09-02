@@ -47,7 +47,8 @@ executable hello-haskell-stack-exe
       --ProgrammingInHaskell.Chapter4
       --ProgrammingInHaskell.Chapter5
       --ProgrammingInHaskell.Chapter6
-      ProgrammingInHaskell.Chapter7
+      --ProgrammingInHaskell.Chapter7
+      ProgrammingInHaskell.Chapter8
       --TestA
       --Paths_hello_haskell_stack
   hs-source-dirs:

@@ -46,6 +46,11 @@ transmit = decode . channel . encode
 channel :: [Bit] -> [Bit]
 channel = id
 
+noChannel:: String -> String
+noChannel = decode . encode
+
+withId :: String -> String
+withId = decode . id . encode
 
 {-
 Example: Vote algorithms
@@ -74,5 +79,55 @@ winner = snd . last . result
 ballots :: [[String]]
 ballots = [["Red", "Green"], ["Blue"], ["Green", "Red", "Blue"], ["Blue", "Green", "Red"], ["Green"]]
 
+rmempty :: Eq a => [[a]] -> [[a]]
+rmempty = filter (/= [])
+
+elim :: Eq a => a -> [[a]] -> [[a]]
+elim x = map (filter (/= x))
+
+rank :: Ord a => [[a]] -> [a]
+rank = map snd . result . map head
+
+winner' :: Ord a => [[a]] -> a
+winner' bs = case rank (rmempty bs) of
+    [c] -> c
+    (c:cs) -> winner' (elim c bs)
  
 {--- Excersies ---}
+
+
+
+listComp :: (a -> b) -> [a] -> (a -> Bool) -> [b]
+listComp f xs p = map f (filter p xs)
+
+all' :: (a -> Bool) -> [a] -> Bool
+all' p = and . map p
+
+any' :: (a -> Bool) -> [a] -> Bool
+any' p = or . map p
+
+
+takeWhile :: (a -> Bool) -> [a] -> [a]
+takeWhile xs p = take . filter p xs
+
+dropWhile :: (a -> Bool) -> [a] -> [a]
+dropWhile xs p = take . filter p xs
+
+map' :: Foldable t1 => (t2 -> a) -> t1 t2 -> [a]
+map' f xs = foldr (\x ys -> f x : ys) [] xs
+
+filter' :: Foldable t => (a -> Bool) -> t a -> [a]
+filter' p = foldr (\x xs -> if p x then x:xs else xs) []
+
+
+dec2int :: [Int] -> Int
+dec2int = foldl (\x y -> 10*x + y) 0
+
+curry :: ((a,b) -> c) -> (a -> b -> c)
+curry f = \x y -> f (x,y)
+
+uncurry :: (a -> b -> c) -> ((a,b) -> c)
+uncurry f = \(x,y) -> f x y
+
+--filter p [] = []
+--filter p 
