@@ -107,11 +107,11 @@ any' :: (a -> Bool) -> [a] -> Bool
 any' p = or . map p
 
 
-takeWhile :: (a -> Bool) -> [a] -> [a]
-takeWhile xs p = take . filter p xs
+-- takeWhile :: (a -> Bool) -> [a] -> [a]
+-- takeWhile xs p = take . filter p xs
 
-dropWhile :: (a -> Bool) -> [a] -> [a]
-dropWhile xs p = take . filter p xs
+-- dropWhile :: (a -> Bool) -> [a] -> [a]
+-- dropWhile xs p = take . filter p xs
 
 map' :: Foldable t1 => (t2 -> a) -> t1 t2 -> [a]
 map' f xs = foldr (\x ys -> f x : ys) [] xs
